@@ -1,0 +1,32 @@
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<div id="title"><h1>{{title}}</h1></div>
+<div id="subtitle"><h6>{{subTitle}}</h6></div>
+
+<i class="fas fa-barcode"></i>
+
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div id="image"><img src="https://image.flaticon.com/icons/png/128/857/857681.png"></div>
+      <div id="div1"><p id="p1">Meal Subtotal:</p><input id="input1"  #input1 type="number" placeholder="$" [value]="input1"></div>
+      <div id="div2"><p id="p2">Tax:</p><input id="input2" #input2 type="number" placeholder="%" [value]="input2"></div>
+      <div id="div3"><p id="p3">Gratuity:</p><input id="input3" #input3 type="number" placeholder="%" [value]="input3"></div>
+      <div id="button"><a href="#" class="btn btn-dark" (click)="calculate(input1.value,input2.value,input3.value);message();">Calculate</a></div>
+    
+     
+
+ <div id="total"><p>Total: {{totalPrice | currency:'USD'}}</p></div>
+ <h6>{{thankYou}}</h6>
+ <h6>{{print}}</h6>
+ <h6><p id="bar">{{bar}}</p></h6>
+ <i class="fas fa-barcode"></i>
+    </div>
+  </div>
+
+
+
+
+<!-- routing outlet -->
+<router-outlet></router-outlet>
